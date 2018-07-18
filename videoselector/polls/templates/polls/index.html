@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Video Selector Prototype</title>
+  </head>
+  <body>
+  {% if request.GET.before %}
+    <h1>{{ message }}</h1>
+  {% else %}
+  <form method="get" action="{% url 'polls:index' %}">
+    <input name="before" value="{{request.GET.before}}">
+    <input name="after" value="{{request.GET.after}}">
+    <button type="submit">SUBMIT</button>
+  </form>
+  {% endif %}
+  </body>  
+</html>
